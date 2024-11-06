@@ -503,6 +503,17 @@
     <script src="assets/js/plugins.min.js"></script>
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
+    <script>
+        function navigateToPage() {
+            const userRole = document.getElementById("userRoles").value;
+
+            if (userRole === "INSTRUCTOR") {
+                window.location.href = "Instructor-register.html"; // Replace with the actual URL for the instructor page
+            } else if (userRole === "STUDENT") {
+                window.location.href = "student-Register.html"; // Replace with the actual URL for the student page
+            }
+        }
+    </script>
 </body>
 
 </html>

@@ -1,52 +1,51 @@
 <?php
 
-    header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Origin: *");
 
 
 
-    // Only process POST reqeusts.
+// Only process POST reqeusts.
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-        // Get the form fields and remove whitespace.
+    // Get the form fields and remove whitespace.
 
-        $first_name = strip_tags(trim($_POST["name"]));
+    $first_name = strip_tags(trim($_POST["name"]));
 
-        $first_name = str_replace(array("\r","\n"),array(" "," "),$first_name);
+    $first_name = str_replace(array("\r", "\n"), array(" ", " "), $first_name);
 
-        $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
+    $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
 
-        $subject = trim($_POST["subject"]);
+    $subject = trim($_POST["subject"]);
 
-        $message = trim($_POST["message"]);
-
-
-        // Check that data was sent to the mailer.
-
-        if ( empty($first_name) OR empty($subject) OR empty($phone) OR empty($message) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-
-            // Set a 400 (bad request) response code and exit.
-
-            http_response_code(400);
-
-            echo "Please complete the form and try again.";
-
-            exit;
-
-        }
+    $message = trim($_POST["message"]);
 
 
-        // Set the recipient email address.
+    // Check that data was sent to the mailer.
 
-        $recipient = "mailcheck@whizthemes.com";
+    if (empty($first_name) or empty($subject) or empty($phone) or empty($message) or !filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
-        // Set the email subject.
+        // Set a 400 (bad request) response code and exit.
 
-        $subject = "Edule - Mail From $first_name";
+        http_response_code(400);
 
-        // Build the email content.
+        echo "Please complete the form and try again.";
 
-        $email_content = 
+        exit;
+    }
+
+
+    // Set the recipient email address.
+
+    $recipient = "mailcheck@whizthemes.com";
+
+    // Set the email subject.
+
+    $subject = "Edule - Mail From $first_name";
+
+    // Build the email content.
+
+    $email_content =
 
         '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -384,7 +383,7 @@
 
                                                         <hr>
 
-                                                        <h2>' . $first_name. '</h2>
+                                                        <h2>' . $first_name . '</h2>
 
                                                     </td>
 
@@ -416,7 +415,7 @@
 
                                                         <hr>
 
-                                                        <h2 class="email-txt">'. $email .'</h2>
+                                                        <h2 class="email-txt">' . $email . '</h2>
 
                                                     </td>
 
@@ -448,7 +447,7 @@
 
                                                         <hr>
 
-                                                        <h2>'. $subject .'</h2>
+                                                        <h2>' . $subject . '</h2>
 
                                                     </td>
 
@@ -480,7 +479,7 @@
 
                                                         <hr>
 
-                                                        <p class="message-content">'. $message .'</p>
+                                                        <p class="message-content">' . $message . '</p>
 
                                                     </td>
 
@@ -550,50 +549,40 @@
 
 
 
-        // Build the email headers.
+    // Build the email headers.
 
-        $email_headers = "MIME-Version: 1.0" . "\r\n";
+    $email_headers = "MIME-Version: 1.0" . "\r\n";
 
-        $email_headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+    $email_headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
-        $email_headers .= 'From:' . $first_name . ' ' . 'noreply@yourdomain.com' . "\r\n";
+    $email_headers .= 'From:' . $first_name . ' ' . 'noreply@yourdomain.com' . "\r\n";
 
-        $email_headers .= 'Reply-To:' . $email . "\r\n";
-
-
-
-        // Send the email.
-
-        if (mail($recipient, $subject, $email_content, $email_headers)) {
-
-            // Set a 200 (okay) response code.
-
-            http_response_code(200);
-
-            echo "Thank You! Your message has been sent.";
-
-        } else {
-
-            // Set a 500 (internal server error) response code.
-
-            http_response_code(500);
-
-            echo "Oops! Something went wrong and we couldn't send your message.";
-
-        }
+    $email_headers .= 'Reply-To:' . $email . "\r\n";
 
 
 
+    // Send the email.
+
+    if (mail($recipient, $subject, $email_content, $email_headers)) {
+
+        // Set a 200 (okay) response code.
+
+        http_response_code(200);
+
+        echo "Thank You! Your message has been sent.";
     } else {
 
-        // Not a POST request, set a 403 (forbidden) response code.
+        // Set a 500 (internal server error) response code.
 
-        http_response_code(403);
+        http_response_code(500);
 
-        echo "There was a problem with your submission, please try again.";
-
+        echo "Oops! Something went wrong and we couldn't send your message.";
     }
+} else {
 
+    // Not a POST request, set a 403 (forbidden) response code.
 
+    http_response_code(403);
 
-?>
+    echo "There was a problem with your submission, please try again.";
+}
