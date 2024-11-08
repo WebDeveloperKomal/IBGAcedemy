@@ -19007,7 +19007,7 @@ only screen and (max-width: 575px) {
   position: relative;
   overflow: hidden;
   z-index: 2;
-  padding-top: 50px;
+  padding-top: 3px;
   display: flex;
   align-items: center;
 }
