@@ -9,13 +9,15 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/favicon logo.png" style="width: 250px; height: 90px;">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/favicon logo.png"
+        style="width: 250px; height: 90px;">
     <!-- CSS
 	============================================ -->
     <!-- Google Fonts CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <!-- Icon Font CSS -->
     <link rel="stylesheet" href="assets/css/plugins/icofont.min.css">
     <link rel="stylesheet" href="assets/css/plugins/flaticon.css">
@@ -62,7 +64,8 @@
                         <div class="header-top-medal">
                             <div class="top-info">
                                 <p><i class="flaticon-phone-call"></i> <a href="tel:8956555109">+918956555109</a></p>
-                                <p><i class="flaticon-email"></i> <a href="mailto:info@ibgacademy.in">info@ibgacademy.in</a></p>
+                                <p><i class="flaticon-email"></i> <a
+                                        href="mailto:info@ibgacademy.in">info@ibgacademy.in</a></p>
                             </div>
                         </div>
                         <!-- Header Top Medal End -->
@@ -89,7 +92,8 @@
                     <div class="header-main-wrapper">
                         <!-- Header Logo Start -->
                         <div class="header-logo">
-                            <a href="index.html"><img src="assets/images/logo/Final IBG Academy logo.png" alt="Logo" width="250px"></a>
+                            <a href="index.html"><img src="assets/images/logo/Final IBG Academy logo.png" alt="Logo"
+                                    width="250px"></a>
                         </div>
                         <!-- Header Logo End -->
                         <!-- Header Menu Start -->
@@ -253,7 +257,8 @@
             </div>
             <!-- Shape Icon Box End -->
             <img class="shape-3" src="assets/images/shape/shape-24.png" alt="Shape">
-            <img class="shape-author" src="assets/images/Home/Phootos-18 (1).jpg" alt="Shape" width="200px" height="200px">
+            <img class="shape-author" src="assets/images/Home/Phootos-18 (1).jpg" alt="Shape" width="200px"
+                height="200px">
         </div>
         <!-- Page Banner End -->
         <!-- Register & Login Start -->
@@ -279,33 +284,39 @@
                             <div class="register-login-form">
                                 <h3 class="title">Login <span>Now</span></h3>
                                 <div class="form-wrapper">
-                                    <form action="#">
+                                    <form id="loginForm" action="#" method="POST">
                                         <!-- Single Form Start -->
                                         <div class="single-form">
-                                            <input type="email" placeholder="Username or Email" id="email">
+                                            <input type="email" placeholder="Username or Email" id="email" required>
                                         </div>
                                         <!-- Single Form End -->
+
                                         <!-- Single Form Start -->
                                         <div class="single-form">
-                                            <input type="password" placeholder="Password" id="password">
+                                            <input type="password" placeholder="Password" id="password" required>
                                         </div>
                                         <!-- Single Form End -->
+
                                         <!-- Single Form Start -->
                                         <div class="single-form">
-                                            <a href="ForgetPassword.html" class="forgot-password-link">Forgot
+                                            <a href="forgetpassword.html" class="forgot-password-link">Forgot
                                                 Password?</a>
                                         </div>
                                         <!-- Single Form End -->
+
                                         <!-- Single Form Start -->
                                         <div class="single-form">
-                                            <a button class="btn btn-primary btn-hover-dark w-100" href="after-enroll.html">Student
-                                                Login</button></a>
-                                            <a button class="btn btn-primary btn-hover-dark w-100" href="courses-admin.html">Instructor
-                                                Login</button></a>
-                                            <a class="btn btn-secondary btn-outline w-100" href="overview.html">Admin
-                                                Login</a>
+                                            <button type="button" class="btn btn-primary btn-hover-dark w-100"
+                                                id="loginButton">Student Login</button>
+                                            <button type="button" class="btn btn-primary btn-hover-dark w-100"
+                                                id="instructorLoginButton">Instructor Login</button>
+                                            <button type="button" class="btn btn-secondary btn-outline w-100"
+                                                id="adminLoginButton">Admin Login</button>
                                         </div>
                                         <!-- Single Form End -->
+
+                                        <!-- Message Display -->
+                                        <p id="message" style="color: red; display: none;"></p>
                                     </form>
                                 </div>
                             </div>
@@ -337,12 +348,8 @@
                     <!-- Download App Button End -->
                     <div class="download-app-btn">
                         <ul class="app-btn">
-                            <li>
-                                <a href="#"><img src="assets/images/google-play.png" alt="Google Play"></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="assets/images/app-store.png" alt="App Store"></a>
-                            </li>
+                            <li><a href="#"><img src="assets/images/google-play.png" alt="Google Play"></a></li>
+                            <li><a href="#"><img src="assets/images/app-store.png" alt="App Store"></a></li>
                         </ul>
                     </div>
                     <!-- Download App Button End -->
@@ -363,18 +370,22 @@
                             <!-- Footer Widget Start -->
                             <div class="footer-widget">
                                 <div class="widget-logo">
-                                    <a href="#"><img src="assets/images/logo/Final IBG Academy logo.png" alt="Logo" style="margin-top: -18px; width: 220px;"></a>
+                                    <a href="#"><img src="assets/images/logo/Final IBG Academy logo.png" alt="Logo"
+                                            style="margin-top: -18px; width: 220px;"></a>
                                 </div>
                                 <div class="widget-address">
                                     <h4 class="footer-widget-title"></h4>
-                                    <p style="color: black;">IBG House, Sharv Plaza, Sr .No.295, Plot No.13, Hadapsar, Pune, Maharashtra, India: 411028</p>
+                                    <p style="color: black;">IBG House, Sharv Plaza, Sr .No.295, Plot No.13, Hadapsar,
+                                        Pune, Maharashtra, India: 411028</p>
                                 </div>
                                 <ul class="widget-info">
                                     <li>
-                                        <p> <i class="flaticon-email"></i> <a href="mailto:info@ibgacademy.in">info@ibgacademy.in</a> </p>
+                                        <p> <i class="flaticon-email"></i> <a
+                                                href="mailto:info@ibgacademy.in">info@ibgacademy.in</a> </p>
                                     </li>
                                     <li>
-                                        <p> <i class="flaticon-phone-call"></i> <a href="tel:8956555109">+918956555109</a> </p>
+                                        <p> <i class="flaticon-phone-call"></i> <a
+                                                href="tel:8956555109">+918956555109</a> </p>
                                     </li>
                                 </ul>
                                 <ul class="widget-social">
@@ -454,9 +465,7 @@
                             <a href="acceptable-use-and-policy.html">Acceptable Use Policy</a>
                         </div>
                         <div class="copyright-text">
-                            <p>@ 2023-24 IBG Academy of India. All Rights Reserved.
-                                <a href="#"></a>
-                            </p>
+                            <p>@ 2023-24 IBG Academy of India. All Rights Reserved. <a href="#"></a></p>
                         </div>
                     </div>
                     <!-- Footer Copyright End -->
@@ -484,6 +493,68 @@
         function showForgotPasswordModal() {
             alert("Forgot Password link clicked.");
         }
+    </script>
+    <script>
+        const studentCredentials = {
+            email: "student@example.com",
+            password: "student@123"
+        };
+        const instructorCredentials = {
+            email: "instructor@example.com",
+            password: "instructor@123"
+        };
+        const adminCredentials = {
+            email: "admin@example.com",
+            password: "admin@123"
+        };
+
+        // Reference elements
+        const loginButton = document.getElementById("loginButton");
+        const instructorLoginButton = document.getElementById("instructorLoginButton");
+        const adminLoginButton = document.getElementById("adminLoginButton");
+        const message = document.getElementById("message");
+
+        loginButton.addEventListener("click", function () {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            // Validate student credentials
+            if (email === studentCredentials.email && password === studentCredentials.password) {
+                message.style.display = "none"; // Hide any error message
+                window.location.href = "after-enroll.html";
+            } else {
+                message.textContent = "Incorrect email or password for Student. Please try again.";
+                message.style.display = "block"; // Show error message
+            }
+        });
+
+        instructorLoginButton.addEventListener("click", function () {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            // Validate instructor credentials
+            if (email === instructorCredentials.email && password === instructorCredentials.password) {
+                message.style.display = "none";
+                window.location.href = "courses-admin.html";
+            } else {
+                message.textContent = "Incorrect email or password for Instructor. Please try again.";
+                message.style.display = "block";
+            }
+        });
+
+        adminLoginButton.addEventListener("click", function () {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            // Validate admin credentials
+            if (email === adminCredentials.email && password === adminCredentials.password) {
+                message.style.display = "none";
+                window.location.href = "overview.html";
+            } else {
+                message.textContent = "Incorrect email or password for Admin. Please try again.";
+                message.style.display = "block";
+            }
+        });
     </script>
 
 </body>
