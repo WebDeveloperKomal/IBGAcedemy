@@ -19055,7 +19055,7 @@ only screen and (max-width: 767px) {
 
 .slider-images {
   position: absolute;
-  bottom: 0;
+  bottom: 24px;
   right: 0;
   width: 56%;
   height: 100%;
@@ -21014,7 +21014,7 @@ only screen and (max-width: 575px) {
 /*  4.9 - Page Banner CSS
 /*----------------------------------------*/
 .page-banner {
-  height: 550px;
+  height: 402px;
   background-color: #e7f8ee;
   display: flex;
   align-items: center;
@@ -21178,7 +21178,7 @@ only screen and (max-width: 767px) {
 }
 
 .page-banner-content .title {
-  font-size: 40px;
+  font-size: 34px;
   font-weight: 500;
   margin-bottom: 0;
   margin-top: 15px;
@@ -21348,6 +21348,7 @@ only screen and (max-width: 767px) {
   width: 100%;
 }
 
+/* about us years of experiance */
 .about-images .about-years {
   width: 125px;
   background-color: #309255;
@@ -21371,6 +21372,10 @@ only screen and (max-width: 767px) {
   margin-top: -30px;
   position: relative;
 }
+
+/* @media only screen and (max-width: 575px){} */
+
+/* about us years of experiance */
 
 .about-images .about-years p {
   color: #fff;
@@ -22671,7 +22676,7 @@ only screen and (max-width: 575px) {
 /*----------------------------------------*/
 .register-login-wrapper {
   padding: 70px;
-  padding-top: 20px;
+  padding-top: 0px;
   border: 1px solid rgba(48, 146, 85, 0.2);
   border-radius: 10px;
 }
