@@ -22637,8 +22637,8 @@ only screen and (min-width:992px) and (max-width:1199px) {
 @media only screen and (max-width:767px),
 only screen and (min-width:768px) and (max-width:991px) {
     .page-banner {
-        height: 400px;
-        padding-top: 103px
+        height: 369px;
+        padding-top: 105px
     }
 }
 

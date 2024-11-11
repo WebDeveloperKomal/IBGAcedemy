@@ -18328,7 +18328,7 @@ only screen and (max-width: 767px) {
   left: -305px;
   background-color: #fff;
   z-index: 999;
-  padding-top: 70px;
+  padding-top: 38px;
   transition: all 0.3s ease 0s;
   overflow: auto;
 }
@@ -21026,8 +21026,8 @@ only screen and (max-width: 575px) {
 @media only screen and (min-width: 768px) and (max-width: 991px),
 only screen and (max-width: 767px) {
   .page-banner {
-    height: 400px;
-    padding-top: 103px;
+    height: 369px;
+    padding-top: 105px;
   }
 }
 
