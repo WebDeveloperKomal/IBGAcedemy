@@ -28265,11 +28265,11 @@ only screen and (max-width: 767px) {
 
 .back-to-top {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 12px;
+  right: 10px;
   font-size: 20px;
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   line-height: 36px;
   border-radius: 50%;
   z-index: 99;
@@ -28286,7 +28286,33 @@ only screen and (max-width: 767px) {
   background-color: #212832;
 }
 
+/* ------- */
+.whatsapp-float {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  bottom: 8px;
+  left: 10px;
+}
 
+@keyframes floatUpDown {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.icofont-simple-up {
+  animation: floatUpDown 1.5s ease-in-out infinite;
+  display: inline-block;
+}
+
+/* ----- */
 
 /* --------------------------------------------------------------------- */
 
