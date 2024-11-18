@@ -1,31 +1,31 @@
-(function ($) {
+(function($) {
     "use strict";
 
 
     /*--
 		Header Sticky
     -----------------------------------*/
-    $(window).on('scroll', function(event) {    
+    $(window).on('scroll', function(event) {
         var scroll = $(window).scrollTop();
         if (scroll <= 100) {
             $(".header-main").removeClass("sticky");
-        } else{
+        } else {
             $(".header-main").addClass("sticky");
         }
-	});
-    
+    });
+
 
     /*--
 		Menu Active
     -----------------------------------*/
-    $(function () {
-    var url = window.location.pathname; 
-    var activePage = url.substring(url.lastIndexOf('/') + 1); 
-        $('.nav-menu li a').each(function () { 
-            var linkPage = this.href.substring(this.href.lastIndexOf('/') + 1); 
-    
-            if (activePage == linkPage) { 
-                $(this).closest("li").addClass("active"); 
+    $(function() {
+        var url = window.location.pathname;
+        var activePage = url.substring(url.lastIndexOf('/') + 1);
+        $('.nav-menu li a').each(function() {
+            var linkPage = this.href.substring(this.href.lastIndexOf('/') + 1);
+
+            if (activePage == linkPage) {
+                $(this).closest("li").addClass("active");
             }
         });
     });
@@ -37,24 +37,24 @@
 
     function menuScript() {
 
-        $('.menu-toggle').on('click', function(){
+        $('.menu-toggle').on('click', function() {
             $('.mobile-menu').addClass('open')
             $('.overlay').addClass('open')
         });
-        
-        $('.menu-close').on('click', function(){
+
+        $('.menu-close').on('click', function() {
             $('.mobile-menu').removeClass('open')
             $('.overlay').removeClass('open')
         });
-        
-        $('.overlay').on('click', function(){
+
+        $('.overlay').on('click', function() {
             $('.mobile-menu').removeClass('open')
             $('.overlay').removeClass('open')
         });
-        
+
         /*Variables*/
         var $offCanvasNav = $('.mobile-menu-items'),
-        $offCanvasNavSubMenu = $offCanvasNav.find('.sub-menu');
+            $offCanvasNavSubMenu = $offCanvasNav.find('.sub-menu');
 
         /*Add Toggle Button With Off Canvas Sub Menu*/
         $offCanvasNavSubMenu.parent().prepend('<span class="mobile-menu-expand"></span>');
@@ -79,7 +79,7 @@
             }
         });
 
-        $( ".sub-menu" ).parent( "li" ).addClass( "menu-item-has-children" );
+        $(".sub-menu").parent("li").addClass("menu-item-has-children");
     }
     menuScript();
 
@@ -88,13 +88,13 @@
     -----------------------------------*/
     $('.video-popup').magnificPopup({
         type: 'iframe'
-        // other options
+            // other options
     });
 
     $('.image-popup').magnificPopup({
         type: 'image',
-        gallery:{
-          enabled:true
+        gallery: {
+            enabled: true
         }
     });
 
@@ -104,24 +104,24 @@
     -----------------------------------*/
     var edule = new Swiper('.courses-active .swiper-container', {
         speed: 600,
-        spaceBetween: 30,        
+        spaceBetween: 30,
         navigation: {
             nextEl: '.courses-active .swiper-button-next',
             prevEl: '.courses-active .swiper-button-prev',
-        },       
+        },
         breakpoints: {
             0: {
                 slidesPerView: 1,
             },
             576: {
                 slidesPerView: 2,
-            },  
+            },
             768: {
                 slidesPerView: 3,
-            },            
+            },
             992: {
                 slidesPerView: 4,
-            },            
+            },
             1200: {
                 slidesPerView: 5,
             }
@@ -134,7 +134,7 @@
     -----------------------------------*/
     var edule = new Swiper('.testimonial-active .swiper-container', {
         speed: 600,
-        spaceBetween: 30,        
+        spaceBetween: 30,
         pagination: {
             el: '.testimonial-active .swiper-pagination',
             clickable: true,
@@ -142,10 +142,10 @@
         breakpoints: {
             0: {
                 slidesPerView: 1,
-            },  
+            },
             768: {
                 slidesPerView: 1,
-            },            
+            },
             992: {
                 slidesPerView: 2,
             }
@@ -164,17 +164,17 @@
             0: {
                 slidesPerView: 2,
                 spaceBetween: 20,
-            },  
+            },
             576: {
                 slidesPerView: 3,
-            },  
+            },
             768: {
                 slidesPerView: 4,
-            },            
+            },
             992: {
                 slidesPerView: 5,
                 spaceBetween: 45,
-            },            
+            },
             1200: {
                 slidesPerView: 5,
                 spaceBetween: 85,
@@ -192,11 +192,11 @@
     var edule = new Swiper('.reviews-active .swiper-container', {
         speed: 600,
         spaceBetween: 30,
-        loop: true,  
+        loop: true,
         pagination: {
             el: '.reviews-active .swiper-pagination',
             clickable: true,
-        },      
+        },
         autoplay: {
             delay: 8000,
         },
@@ -208,15 +208,15 @@
     -----------------------------------*/
     var edule = new Swiper('.students-active .swiper-container', {
         speed: 600,
-        spaceBetween: 30,        
+        spaceBetween: 30,
         navigation: {
             nextEl: '.students-active .swiper-button-next',
             prevEl: '.students-active .swiper-button-prev',
-        },       
+        },
         breakpoints: {
             0: {
                 slidesPerView: 1,
-            },  
+            },
             768: {
                 slidesPerView: 2,
             },
@@ -231,49 +231,49 @@
 		Rating Script
 	-----------------------------------*/
 
-	$("#rating li").on('mouseover', function(){
-		var onStar = parseInt($(this).data('value'), 10);
-		var siblings = $(this).parent().children('li.star');
-		Array.from(siblings, function(item){
-			var value = item.dataset.value;
-			var child = item.firstChild;
-			if(value <= onStar){
-				child.classList.add('hover')
-			} else {
-				child.classList.remove('hover')
-			}
-		})
-	})
+    $("#rating li").on('mouseover', function() {
+        var onStar = parseInt($(this).data('value'), 10);
+        var siblings = $(this).parent().children('li.star');
+        Array.from(siblings, function(item) {
+            var value = item.dataset.value;
+            var child = item.firstChild;
+            if (value <= onStar) {
+                child.classList.add('hover')
+            } else {
+                child.classList.remove('hover')
+            }
+        })
+    })
 
-	$("#rating").on('mouseleave', function(){
-		var child = $(this).find('li.star i');
-		Array.from(child, function(item){
-			item.classList.remove('hover');
-		})
-	})
+    $("#rating").on('mouseleave', function() {
+        var child = $(this).find('li.star i');
+        Array.from(child, function(item) {
+            item.classList.remove('hover');
+        })
+    })
 
-	
-	$('#rating li').on('click', function(e) {
-		var onStar = parseInt($(this).data('value'), 10);
-		var siblings = $(this).parent().children('li.star');
-		Array.from(siblings, function(item){
-			var value = item.dataset.value;
-			var child = item.firstChild;
-			if(value <= onStar){
-				child.classList.remove('hover', 'fa-star-o');
-				child.classList.add('star')
-			} else {
-				child.classList.remove('star');
-				child.classList.add('fa-star-o')
-			}
-		})
-	}) 
+
+    $('#rating li').on('click', function(e) {
+        var onStar = parseInt($(this).data('value'), 10);
+        var siblings = $(this).parent().children('li.star');
+        Array.from(siblings, function(item) {
+            var value = item.dataset.value;
+            var child = item.firstChild;
+            if (value <= onStar) {
+                child.classList.remove('hover', 'fa-star-o');
+                child.classList.add('star')
+            } else {
+                child.classList.remove('star');
+                child.classList.add('fa-star-o')
+            }
+        })
+    })
 
 
     /*--
 		Video Active
 	-----------------------------------*/
-    $('.video-playlist .link').on('click', function (event) {
+    $('.video-playlist .link').on('click', function(event) {
         $(this).siblings('.active').removeClass('active');
         $(this).addClass('active');
         event.preventDefault();
@@ -290,7 +290,7 @@
 		Back to top Script
 	-----------------------------------*/
     // Show or hide the sticky footer button
-    $(window).on('scroll', function (event) {
+    $(window).on('scroll', function(event) {
         if ($(this).scrollTop() > 600) {
             $('.back-to-top').fadeIn(200)
         } else {
@@ -299,18 +299,50 @@
     });
 
     //Animate the scroll to yop
-    $('.back-to-top').on('click', function (event) {
-    event.preventDefault();
+    $('.back-to-top').on('click', function(event) {
+        event.preventDefault();
 
         $('html, body').animate({
             scrollTop: 0,
         }, 1500);
     });
 
-    
+
 })(jQuery);
 
 
 
 
-  
+
+
+
+
+// Get the login and register link elements
+const loginLink = document.getElementById('loginLink');
+const registerLink = document.getElementById('registerLink');
+
+// Add a click event listener to the login link to show SweetAlert
+loginLink.addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent navigation to login.html
+
+    // Show SweetAlert for Login link
+    Swal.fire({
+        title: 'Feature Coming Soon!',
+        text: 'This feature will be added soon. Stay tuned!',
+        icon: 'info',
+        confirmButtonText: 'OK'
+    });
+});
+
+// Add a click event listener to the register link to show SweetAlert
+registerLink.addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent navigation to Instructor-register.html
+
+    // Show SweetAlert for Register link
+    Swal.fire({
+        title: 'Feature Coming Soon!',
+        text: 'This feature will be added soon. Stay tuned!',
+        icon: 'info',
+        confirmButtonText: 'OK'
+    });
+});
